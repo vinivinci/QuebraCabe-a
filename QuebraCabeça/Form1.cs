@@ -23,7 +23,7 @@ namespace QuebraCabeça
         private string[] convertedImages = new string[10];
         private void Form1_Load(object sender, EventArgs e)
         {
-            setR2d2Puzzle();
+            setC3poPuzzle();
             randomizePieces();
             puzzlePiece1.AllowDrop = true;
             puzzlePiece2.AllowDrop = true;
@@ -119,7 +119,7 @@ namespace QuebraCabeça
 
         private void pictureBox20_Click(object sender, EventArgs e)
         {
-
+            Application.Exit();
         }
 
         private void vaderToolStripMenuItem_Click(object sender, EventArgs e)
@@ -192,6 +192,11 @@ namespace QuebraCabeça
         private void pictureBox19_Click(object sender, EventArgs e)
         {
             randomizePieces();
+
+            if (isSuccessPuzzle())
+            {
+                restartPuzzle();
+            }
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -471,6 +476,11 @@ namespace QuebraCabeça
         private void puzzlePiece9_DoubleClick(object sender, EventArgs e)
         {
             setImageToNull(puzzlePiece9);
+        }
+
+        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
